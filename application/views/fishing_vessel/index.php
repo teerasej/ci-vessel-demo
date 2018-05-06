@@ -11,6 +11,12 @@
                         <h6 class="card-subtitle text-muted">
                             <?php echo $ship['CountryName']; ?> 
                         </h6>
+                        <?php 
+                            $hidden['id'] = $ship['id'];
+                            echo form_open('fishingvessel/remove','', $hidden); 
+                        ?>
+                            <input type="submit" name="submit" value="ลบ" class="btn btn-primary"/>
+                        </form> 
                     </div>
                 </div>
             </div>

@@ -16,7 +16,7 @@ class Fishingvessel_model extends CI_Model {
     public function getAll()
     {
         
-        $this->db->select('v.id as VesselID, v.Name as VesselName, c.Name as CountryName',false);
+        $this->db->select('v.id as id, v.Name as VesselName, c.Name as CountryName',false);
         $this->db->from('Vessel as v');
         $this->db->join('Country as c','v.Country_ID = c.id');
 
@@ -40,6 +40,14 @@ class Fishingvessel_model extends CI_Model {
         );
 
         return $this->db->insert('Vessel', $data);
+    }
+
+    public function remove_vessel()
+    {
+        $data = array(
+            'id' => $this->input->post('id')
+        );
+        return $this->db->delete('Vessel', $data);
     }
 
 }

@@ -57,6 +57,14 @@ class FishingVessel extends CI_Controller
 
     }
 
+
+    public function remove() 
+    {
+        $this->fishingvessel_model->remove_vessel();
+        redirect('/fishingvessel');
+    }
+
+
 }
 
 /* End of file FishingVessel.php */
