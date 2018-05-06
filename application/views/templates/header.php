@@ -5,12 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <script src="<?=base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
+        
         
 
         <script src="<?=base_url(); ?>assets/js/chart/fusioncharts.js"></script>
         <script src="<?=base_url(); ?>assets/js/chart/fusioncharts.charts.js"></script>
         <script src="<?=base_url(); ?>assets/js/chart/themes/fusioncharts.theme.fint.js"></script>
+
+        <script src="<?=base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
+        <script src="<?=base_url(); ?>assets/js/jquery-fusioncharts.js"></script>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <link rel="stylesheet" href="<?=base_url(); ?>assets/css/style.css"/>
