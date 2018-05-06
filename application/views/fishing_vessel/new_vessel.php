@@ -21,6 +21,10 @@
                         <?php endforeach ?>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="vesselImage">ภาพ:</label>
+                    <input type="file" name="vesselImage" size="20" />
+                </div>
                 <input type="submit" name="submit" value="เพิ่ม" class="btn btn-primary btn-lg"/>
                 <button class="btn btn-secondary btn-lg">ล้าง</button>
             </form>
