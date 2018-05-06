@@ -10,5 +10,14 @@
             </div>
         </div>
     </div>
-    <div class="col-6"></div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header">
+                จำนวนเรือแยกตามประเทศ
+            </div>
+            <div class="card-body">
+                <div id="pie-chart"></div>
+            </div>
+        </div>
+    </div>
 </div>
