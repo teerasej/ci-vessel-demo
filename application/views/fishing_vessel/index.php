@@ -18,6 +18,14 @@
                             <input type="submit" name="submit" value="ลบ" class="btn btn-primary"/>
                         </form> 
                     </div>
+                    <?php
+                        if( !is_null($ship['imageUrl']) )
+                        {
+                    ?>
+                    <img class="card-img-bottom" src="<?php echo $ship['imageUrl']; ?>" alt="Card image cap">
+                    <?php
+                        }
+                    ?>
                 </div>
             </div>
         <?php endforeach ?>
