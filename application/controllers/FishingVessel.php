@@ -40,11 +40,12 @@ class FishingVessel extends CI_Controller
         // var_dump($_  POST);
         // echo($this->input->post('country'));
 
-        $config['upload_path'] = './uploads/';
+        $config['upload_path'] = './upload/';
         $config['allowed_types'] = 'gif|jpg|png';
         // $config['max_size'] = 100;
         // $config['max_width'] = 1024;
         // $config['max_height'] = 768;
+        $this->load->library('upload', $config);
 
         $this->load->library('form_validation');
         $this->form_validation->set_rules('vesselName', 'vesselName', 'required', array('required' => 'อย่าลืมใส่ชื่อเรือสิคะ'));
@@ -55,9 +56,29 @@ class FishingVessel extends CI_Controller
             $this->load->view('templates/header');
             $this->load->view('fishing_vessel/new_vessel', $data);
             $this->load->view('templates/footer');
+
         } else {
-            $this->fishingvessel_model->saveVessel();
-            redirect('/fishingvessel');
+
+            $upload_success = $this->upload->do_upload('vesselImage');
+
+
+            if(!$upload_success)
+            {
+                $data['countries'] = $this->country_model->getAll();
+                $data['error_upload'] = array('error' => $this->upload->display_errors());
+                
+                $this->load->view('templates/header');
+                $this->load->view('fishing_vessel/new_vessel', $data);
+                $this->load->view('templates/footer');
+
+            }
+            else 
+            {
+                $this->fishingvessel_model->saveVessel();
+                redirect('/fishingvessel');
+            }
+
+            
         }
 
     }
