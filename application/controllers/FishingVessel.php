@@ -1,14 +1,14 @@
-<?php 
+<?php
 
+defined('BASEPATH') or exit('No direct script access allowed');
 
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-class FishingVessel extends CI_Controller {
+class FishingVessel extends CI_Controller
+{
 
     public function __construct()
     {
         parent::__construct();
-        
+
         $this->load->model('fishingvessel_model');
         $this->load->model('country_model');
     }
@@ -20,7 +20,7 @@ class FishingVessel extends CI_Controller {
         // var_dump($data['vessels']);
 
         $this->load->view('templates/header');
-        $this->load->view('fishing_vessel/index', $data );
+        $this->load->view('fishing_vessel/index', $data);
         $this->load->view('templates/footer');
     }
 
@@ -38,15 +38,23 @@ class FishingVessel extends CI_Controller {
         // var_dump($_  POST);
         // echo($this->input->post('country'));
 
-        $this->fishingvessel_model->saveVessel();
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('vesselName', 'vesselName', 'required', array('required' => 'อย่าลืมใส่ชื่อเรือสิคะ'));
 
-        redirect('/fishingvessel');
-        
+        if ($this->form_validation->run() == false) 
+        {
+            $data['countries'] = $this->country_model->getAll();
+
+            $this->load->view('templates/header');
+            $this->load->view('fishing_vessel/new_vessel', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $this->fishingvessel_model->saveVessel();
+            redirect('/fishingvessel');
+        }
+
     }
 
 }
 
 /* End of file FishingVessel.php */
-
-
-?>
