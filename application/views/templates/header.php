@@ -21,7 +21,7 @@
         <a class="nav-link" href="<?php echo site_url('fishingvessel') ?>">Dashboard <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('fishingvessel/add_vessel') ?>">Add New</a>
+        <a class="nav-link" href="<?php echo site_url('fishingvessel/new_vessel') ?>">Add New</a>
       </li>
     </ul>
   </div>
