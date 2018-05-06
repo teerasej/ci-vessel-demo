@@ -32,12 +32,24 @@ class Fishingvessel_model extends CI_Model {
         return $query->result_array();
     }
 
-    public function saveVessel()
+    public function saveVessel($uploaded_image_path = null)
     {
-        $data = array(
-            'Name' => $this->input->post('vesselName'),
-            'Country_ID' => (int) $this->input->post('country')
-        );
+        if(is_null($uploaded_image_path))
+        {
+            $data = array(
+                'Name' => $this->input->post('vesselName'),
+                'Country_ID' => (int) $this->input->post('country')
+            );
+        }
+        else 
+        {
+            $data = array(
+                'Name' => $this->input->post('vesselName'),
+                'Country_ID' => (int) $this->input->post('country'),
+                'imageUrl' => $uploaded_image_path
+            );
+        }
+       
 
         return $this->db->insert('Vessel', $data);
     }
