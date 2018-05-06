@@ -40,11 +40,16 @@ class FishingVessel extends CI_Controller
         // var_dump($_  POST);
         // echo($this->input->post('country'));
 
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        // $config['max_size'] = 100;
+        // $config['max_width'] = 1024;
+        // $config['max_height'] = 768;
+
         $this->load->library('form_validation');
         $this->form_validation->set_rules('vesselName', 'vesselName', 'required', array('required' => 'อย่าลืมใส่ชื่อเรือสิคะ'));
 
-        if ($this->form_validation->run() == false) 
-        {
+        if ($this->form_validation->run() == false) {
             $data['countries'] = $this->country_model->getAll();
 
             $this->load->view('templates/header');
@@ -57,13 +62,11 @@ class FishingVessel extends CI_Controller
 
     }
 
-
-    public function remove() 
+    public function remove()
     {
         $this->fishingvessel_model->remove_vessel();
         redirect('/fishingvessel');
     }
-
 
 }
 
