@@ -3,7 +3,7 @@
 <div class="row" style="padding: 50px 0px;">
         <?php foreach ($vessels as $ship): ?>
             <div class="col-3">
-                <div class="card" style="margin-top: 20px; height: 150px">
+                <div class="card">
                     <div class="card-body">
                         <h6 class="card-title">
                             <?php echo $ship['VesselName']; ?>  
@@ -22,7 +22,7 @@
                         if( !is_null($ship['imageUrl']) )
                         {
                     ?>
-                    <img class="card-img-bottom" src="<?php echo $ship['imageUrl']; ?>" alt="Card image cap">
+                        <img class="card-img-bottom" src="<?php echo base_url($ship['imageUrl']); ?>" alt="Card image cap">
                     <?php
                         }
                     ?>
