@@ -16,10 +16,11 @@ class FishingVessel extends CI_Controller
     public function index()
     {
         $data['vessels'] = $this->fishingvessel_model->getAll();
-
+        $data['title'] = "รายชื่อเรือประมง";
+        // $data['hidden'] = array();
         // var_dump($data['vessels']);
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/header', $data);
         $this->load->view('fishing_vessel/index', $data);
         $this->load->view('templates/footer');
     }
@@ -27,8 +28,9 @@ class FishingVessel extends CI_Controller
     public function new_vessel()
     {
         $data['countries'] = $this->country_model->getAll();
+        $data['title'] = "เพิ่มข้อมูลเรือประมง";
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/header', $data);
         $this->load->view('fishing_vessel/new_vessel', $data);
         $this->load->view('templates/footer');
     }
