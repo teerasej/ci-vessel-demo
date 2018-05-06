@@ -97,8 +97,8 @@ class FishingVessel extends CI_Controller
     {
         $data['title'] = "รายงาน";
 
-        $this->load->view('templates/header');
-        $this->load->view('fishing_vessel/report');
+        $this->load->view('templates/header', $data);
+        $this->load->view('fishing_vessel/report', $data);
         $this->load->view('templates/footer');
     }
 
