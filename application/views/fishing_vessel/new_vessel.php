@@ -6,6 +6,12 @@
 
             <?php echo validation_errors(); ?>
 
+            <?php 
+                if(isset($error_upload))
+                {
+                    echo $error_upload['error']; 
+                }
+            ?>
 
             <?php echo form_open_multipart('fishingvessel/create'); ?>
                 <div class="form-group">
