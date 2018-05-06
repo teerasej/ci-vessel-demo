@@ -8,10 +8,7 @@
         <script src="<?=base_url();?>assets/js/chart/fusioncharts.js"></script>
         <script src="<?=base_url();?>assets/js/chart/fusioncharts.charts.js"></script>
         <script src="<?=base_url();?>assets/js/chart/themes/fusioncharts.theme.fint.js"></script>
-        <script
-			  src="https://code.jquery.com/jquery-3.3.1.js"
-			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-			  crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
         <script src="<?=base_url();?>assets/js/fusioncharts-jquery-plugin.js"></script>
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
