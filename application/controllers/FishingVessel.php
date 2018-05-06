@@ -93,6 +93,15 @@ class FishingVessel extends CI_Controller
         redirect('/fishingvessel');
     }
 
+    public function report()
+    {
+        $data['title'] = "รายงาน";
+
+        $this->load->view('templates/header');
+        $this->load->view('fishing_vessel/report');
+        $this->load->view('templates/footer');
+    }
+
 }
 
 /* End of file FishingVessel.php */
