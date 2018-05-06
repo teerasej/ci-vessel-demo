@@ -6,7 +6,8 @@
 
             <?php echo validation_errors(); ?>
 
-            <?php echo form_open('fishingvessel/create'); ?>
+
+            <?php echo form_open_multipart('fishingvessel/create'); ?>
                 <div class="form-group">
                     <label for="vesselName">ชื่อ</label>
                     <input class="form-control" name="vesselName" type="text" >
@@ -23,7 +24,10 @@
                 </div>
                 <div class="form-group">
                     <label for="vesselImage">ภาพ:</label>
-                    <input type="file" name="vesselImage" size="20" />
+                    <input type="file" name="vesselImage" id="vesselImage"/>
+                    <!-- <label class="btn btn-primary">
+                        Browse <input type="file" name="vesselImage" hidden>
+                    </label> -->
                 </div>
                 <input type="submit" name="submit" value="เพิ่ม" class="btn btn-primary btn-lg"/>
                 <button class="btn btn-secondary btn-lg">ล้าง</button>
