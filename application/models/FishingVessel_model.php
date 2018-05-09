@@ -59,6 +59,18 @@ class Fishingvessel_model extends CI_Model
         return $this->db->insert('Vessel', $data);
     }
 
+    public function save_vessel_with_params($vesselName, $Country_ID)
+    {
+        $data = array(
+            'Name' => $vesselName,
+            'Country_ID' => (int) $Country_ID
+        );
+
+        $this->db->insert('Vessel', $data);
+
+        return $this->db->insert_id();
+    }
+
     public function remove_vessel()
     {
         $data = array(

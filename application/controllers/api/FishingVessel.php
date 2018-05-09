@@ -31,6 +31,21 @@ class FishingVessel extends CI_Controller {
         echo json_encode($data['vessels']);
     }
 
+    public function create() 
+    {
+        $input_data = json_decode(trim(file_get_contents('php://input')), true);
+        $this->load->model('fishingvessel_model');
+        
+        // echo json_encode($input_data);
+        // echo $input_data["Name"];
+        // echo $input_data["Country_ID"];
+        $insert_id = $this->fishingvessel_model->save_vessel_with_params($input_data["Name"], $input_data["Country_ID"]);       
+        
+        $data['insert_id'] = $insert_id;
+        
+        echo json_encode($data);
+    }
+
 }
 
 /* End of file FishingVessel.php */
