@@ -18,7 +18,7 @@ class FishingVessel extends CI_Controller {
         echo 'json';
     }
 
-    public function get_all()
+    public function all_ship()
     {
         $data = $this->fishingvessel_model->getAll();
         echo json_encode($data);
