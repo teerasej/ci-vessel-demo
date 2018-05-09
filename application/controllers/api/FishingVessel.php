@@ -18,7 +18,7 @@ class FishingVessel extends CI_Controller {
         echo 'json';
     }
 
-    public function all_vessels()
+    public function get_vessel_group_by_country()
     {
         $data['vessels'] = $this->fishingvessel_model->all_vessels_group_by_country();
 
