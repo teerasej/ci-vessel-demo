@@ -18,6 +18,12 @@ class FishingVessel extends CI_Controller {
         echo 'json';
     }
 
+    public function get_all()
+    {
+        $data = $this->fishingvessel_model->getAll();
+        echo json_encode($data);
+    }
+
     public function get_vessel_group_by_country()
     {
         $data['vessels'] = $this->fishingvessel_model->all_vessels_group_by_country();
