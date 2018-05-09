@@ -19,10 +19,10 @@
                         </form> 
                     </div>
                     <?php
-                        if( !is_null($ship['imageUrl']) )
+                        if( !is_null($ship['imagePath']) )
                         {
                     ?>
-                        <img class="card-img-bottom" src="<?php echo base_url($ship['imageUrl']); ?>" alt="Card image cap">
+                        <img class="card-img-bottom" src="<?php echo base_url($ship['imagePath']); ?>" alt="Card image cap">
                     <?php
                         }
                     ?>

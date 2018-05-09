@@ -14,7 +14,7 @@ class Fishingvessel_model extends CI_Model
     public function getAll()
     {
 
-        $this->db->select('v.id as id, v.Name as VesselName, v.imageUrl as imageUrl, c.Name as CountryName', false);
+        $this->db->select('v.id as id, v.Name as VesselName, v.imagePath as imagePath, c.Name as CountryName', false);
         $this->db->from('Vessel as v');
         $this->db->join('Country as c', 'v.Country_ID = c.id');
 
